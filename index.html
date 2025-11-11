@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Class Graduation Updates</title>
+  <meta name="description" content="Follow important announcements, dates, and links for our class graduation." />
+  <meta property="og:title" content="Class Graduation Updates" />
+  <meta property="og:description" content="Follow important announcements, dates, and links for our class graduation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #111318;
+      --muted: #9aa3b2;
+      --text: #e6eaf0;
+      --accent: #6aa6ff;
+      --accent-2: #7ef2c4;
+      --danger: #ff7a7a;
+      --radius: 18px;
+      --shadow: 0 10px 40px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fb;
+        --card: #ffffff;
+        --muted: #5b6575;
+        --text: #171a21;
+        --accent: #2f6df6;
+        --accent-2: #0abf7a;
+        --danger: #e45a5a;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 20% -10%, rgba(111,143,255,.12), transparent 70%),
+                  radial-gradient(1200px 800px at 120% 10%, rgba(126,242,196,.10), transparent 65%), var(--bg);
+      color: var(--text); line-height: 1.55;
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
+    header {
+      margin: 14px auto 24px; padding: 18px; border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+    }
+    .topline { display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .brand { display:flex; gap:12px; align-items:center; }
+    .logo {
+      width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display:grid; place-items:center; color: white; font-weight: 800; letter-spacing: .5px;
+    }
+    .title { margin:0; font-size: clamp(20px, 4vw, 28px); }
+    .subtitle { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+    .share {
+      display:flex; gap:8px; flex-wrap:wrap;
+    }
+    button, .btn {
+      -webkit-tap-highlight-color: transparent;
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      color: var(--text);
+      padding: 10px 14px; border-radius: 12px; cursor: pointer; font-weight: 600; font-size: 14px;
+      transition: transform .05s ease, border-color .2s ease, background .2s ease;
+    }
+    button:hover, .btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,.22); }
+    .btn-primary { border-color: transparent; background: linear-gradient(180deg, var(--accent), #1b57da); color: white; }
+
+    .hero {
+      display:grid; gap: 16px; grid-template-columns: 1.2fr .8fr; align-items:center; padding: 18px; border-radius: var(--radius);
+      background: var(--card); border: 1px solid rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    @media (max-width: 820px){ .hero { grid-template-columns: 1fr; } }
+
+    .countdown { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    .pill { padding:10px 12px; border-radius: 10px; background: rgba(255,255,255,.06); font-weight:700; }
+
+    .grid { display:grid; gap: 16px; grid-template-columns: 1fr 1fr; margin-top: 18px; }
+    @media (max-width: 820px){ .grid { grid-template-columns: 1fr; } }
+
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+    .card h2 { margin: 0 0 12px; font-size: 18px; }
+    .muted { color: var(--muted); }
+    .updates { display: grid; gap: 12px; }
+    .update { padding: 14px; border-radius: 14px; border: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); }
+    .update .meta { display:flex; gap:8px; align-items:center; color: var(--muted); font-size: 12px; margin-bottom:6px; }
+    .chip { padding:4px 8px; border-radius:999px; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); font-weight:700; font-size:11px; letter-spacing:.3px; }
+    .update h3 { margin: 2px 0 6px; font-size: 16px; }
+    .update a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .done-toggle { appearance: none; width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid rgba(255,255,255,.25); display:inline-grid; place-items:center; margin-right:8px; cursor:pointer; }
+    .done-toggle:checked { background: var(--accent-2); border-color: var(--accent-2); }
+
+    .list { list-style: none; padding:0; margin:0; display:grid; gap:10px; }
+    .list li { display:flex; gap:10px; }
+
+    footer { color: var(--muted); font-size: 12px; text-align:center; padding: 24px 0 12px; }
+    .small { font-size: 12px; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; background: rgba(255,255,255,.06); padding: 2px 6px; border-radius:6px; border:1px solid rgba(255,255,255,.1); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="topline">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">🎓</div>
+          <div>
+            <h1 class="title" id="siteTitle">SMC Nursing – Graduation Hub</h1>
+            <p class="subtitle" id="siteSubtitle">All the important updates, dates, and links in one place.</p>
+          </div>
+        </div>
+        <div class="share">
+          <button id="copyLinkBtn" class="btn" title="Copy page link">Copy link</button>
+          <a class="btn btn-primary" id="calendarBtn" href="#" target="_blank" rel="noopener">Add key date</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2 style="margin:0 0 8px">Countdown to Graduation</h2>
+        <p class="muted small" id="gradDateText">Date: TBD</p>
+        <div class="countdown" id="countdown"></div>
+        <p class="muted small">(Times shown in your local time.)</p>
+      </div>
+      <div>
+        <div class="card">
+          <h2>Quick Links</h2>
+          <ul class="list" id="quickLinks"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Announcements</h2>
+        <div class="updates" id="updates"></div>
+        <p class="muted small">Tip: completed items can be checked off and will be remembered on this device.</p>
+      </div>
+      <div class="card">
+        <h2>Key Dates</h2>
+        <ul class="list" id="keyDates"></ul>
+        <hr style="opacity:.12; border:none; border-top:1px solid rgba(255,255,255,.1); margin:14px 0">
+        <h2>FAQ</h2>
+        <ul class="list" id="faq"></ul>
+      </div>
+    </section>
+
+    <footer>
+      <div>Made with ❤️ for our class • <span id="year"></span></div>
+    </footer>
+  </div>
+
+  <script>
+    /* =========================
+       🔧 EDIT THIS CONFIG ONLY
+       ========================= */
+    const CONFIG = {
+      siteTitle: "SMC Nursing – Graduation Hub",
+      siteSubtitle: "All the important updates, dates, and links in one place.",
+
+      // Set your graduation date/time (24h) and timezone label for display only
+      graduationDateISO: "2025-12-20T10:00:00", // ← change me
+      graduationTimezoneLabel: "America/Los_Angeles",
+
+      quickLinks: [
+        { label: "Cap & Gown Order Form", url: "#" },
+        { label: "Venue & Parking Info", url: "#" },
+        { label: "Guest Tickets", url: "#" },
+        { label: "Photo/Media Release", url: "#" }
+      ],
+
+      // Simple key date list (sorted by date)
+      keyDates: [
+        { date: "2025-11-25", label: "Last day to order regalia" },
+        { date: "2025-12-05", label: "Ticket request deadline" },
+        { date: "2025-12-19", label: "Rehearsal" },
+        { date: "2025-12-20", label: "Graduation Ceremony" }
+      ],
+
+      // Announcements feed (most recent first). Optionally add a link.
+      announcements: [
+        {
+          id: "u1",
+          date: "2025-11-10",
+          title: "Welcome to the Graduation Hub",
+          text: "Bookmark this page. We’ll post every critical update here.",
+          tag: "INFO"
+        },
+        {
+          id: "u2",
+          date: "2025-11-12",
+          title: "Regalia ordering opens",
+          text: "Use the Cap & Gown link to place your order.",
+          tag: "ACTION",
+          link: { label: "Order now", url: "#" }
+        },
+        {
+          id: "u3",
+          date: "2025-12-01",
+          title: "Ticket request window",
+          text: "Each graduate may request up to 4 guest tickets.",
+          tag: "REMINDER"
+        }
+      ],
+
+      // Simple FAQ
+      faq: [
+        { q: "How many guests can I bring?", a: "Currently 4 per graduate. We’ll announce if more become available." },
+        { q: "What should I wear?", a: "Cap, gown, tassel, and comfortable shoes. Dress in layers for the weather." },
+        { q: "Will there be livestreaming?", a: "Yes, we’ll post the link here 24 hours before the ceremony." }
+      ]
+    };
+
+    /* =========================
+       🚀 APP LOGIC BELOW
+       ========================= */
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    function render(){
+      // Titles
+      $('#siteTitle').textContent = CONFIG.siteTitle;
+      $('#siteSubtitle').textContent = CONFIG.siteSubtitle;
+
+      // Footer year
+      $('#year').textContent = new Date().getFullYear();
+
+      // Quick links
+      const ql = $('#quickLinks');
+      ql.innerHTML = '';
+      CONFIG.quickLinks.forEach(l => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`;
+        ql.appendChild(li);
+      });
+
+      // Key dates
+      const kd = $('#keyDates');
+      kd.innerHTML = '';
+      CONFIG.keyDates
+        .slice().sort((a,b)=> a.date.localeCompare(b.date))
+        .forEach(d => {
+          const li = document.createElement('li');
+          li.innerHTML = `<span class="chip">${formatDate(d.date)}</span> <div>${d.label}</div>`;
+          kd.appendChild(li);
+        });
+
+      // FAQ
+      const fq = $('#faq');
+      fq.innerHTML = '';
+      CONFIG.faq.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `<div><strong>${item.q}</strong><div class="muted">${item.a}</div></div>`;
+        fq.appendChild(li);
+      });
+
+      // Announcements
+      const wrap = $('#updates');
+      wrap.innerHTML = '';
+      const done = getDone();
+      CONFIG.announcements
+        .slice().sort((a,b)=> b.date.localeCompare(a.date))
+        .forEach(u => {
+          const el = document.createElement('div');
+          el.className = 'update';
+          const checked = done.has(u.id) ? 'checked' : '';
+          el.innerHTML = `
+            <div class="meta">
+              <span class="chip">${u.tag || 'INFO'}</span>
+              <span>${formatDate(u.date)}</span>
+            </div>
+            <label style="display:flex; align-items:flex-start; gap:8px;">
+              <input class="done-toggle" type="checkbox" data-id="${u.id}" ${checked} />
+              <div>
+                <h3>${u.title}</h3>
+                <div class="muted">${u.text}</div>
+                ${u.link ? `<div style="margin-top:8px"><a href="${u.link.url}" target="_blank" rel="noopener">${u.link.label} →</a></div>` : ''}
+              </div>
+            </label>
+          `;
+          wrap.appendChild(el);
+        });
+
+      // Grad date + countdown
+      const grad = new Date(CONFIG.graduationDateISO);
+      const tzLabel = CONFIG.graduationTimezoneLabel || 'Local time';
+      $('#gradDateText').textContent = `Date: ${grad.toLocaleString([], { dateStyle:'full', timeStyle:'short' })} (${tzLabel})`;
+      startCountdown(grad);
+
+      // Calendar link (basic Google Calendar link for the ceremony)
+      const calUrl = googleCalendarUrl({
+        title: `${CONFIG.siteTitle} – Graduation Ceremony`,
+        details: 'Graduation ceremony — see the hub for details.',
+        start: grad,
+        end: new Date(grad.getTime() + 2 * 60 * 60 * 1000)
+      });
+      $('#calendarBtn').href = calUrl;
+    }
+
+    function formatDate(d){
+      const dt = new Date(d);
+      return dt.toLocaleDateString([], { year:'numeric', month:'short', day:'numeric' });
+    }
+
+    function getDone(){
+      try { return new Set(JSON.parse(localStorage.getItem('doneUpdates')||'[]')); }
+      catch { return new Set(); }
+    }
+    function setDone(set){
+      localStorage.setItem('doneUpdates', JSON.stringify(Array.from(set)));
+    }
+
+    document.addEventListener('change', (e)=>{
+      if(e.target.matches('.done-toggle')){
+        const set = getDone();
+        const id = e.target.dataset.id;
+        if(e.target.checked) set.add(id); else set.delete(id);
+        setDone(set);
+      }
+    });
+
+    // Countdown logic
+    let countdownInterval;
+    function startCountdown(targetDate){
+      clearInterval(countdownInterval);
+      const el = $('#countdown');
+      function tick(){
+        const now = new Date();
+        const diff = Math.max(0, targetDate - now);
+        const d = Math.floor(diff / (1000*60*60*24));
+        const h = Math.floor((diff / (1000*60*60)) % 24);
+        const m = Math.floor((diff / (1000*60)) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+        el.innerHTML = `
+          <span class="pill">${d}<span class="muted"> days</span></span>
+          <span class="pill">${h}<span class="muted"> hrs</span></span>
+          <span class="pill">${m}<span class="muted"> mins</span></span>
+          <span class="pill">${s}<span class="muted"> secs</span></span>
+        `;
+      }
+      tick();
+      countdownInterval = setInterval(tick, 1000);
+    }
+
+    // Share link
+    $('#copyLinkBtn').addEventListener('click', async ()=>{
+      try {
+        await navigator.clipboard.writeText(location.href);
+        const btn = $('#copyLinkBtn');
+        btn.textContent = 'Link copied!';
+        setTimeout(()=> btn.textContent = 'Copy link', 1400);
+      } catch(err){
+        alert('Copy failed — you can manually copy the URL.');
+      }
+    });
+
+    // Google Calendar quick-add link
+    function toGoogleDate(dt){
+      const pad = (n)=> String(n).padStart(2,'0');
+      const y = dt.getUTCFullYear();
+      const mo = pad(dt.getUTCMonth()+1);
+      const d = pad(dt.getUTCDate());
+      const h = pad(dt.getUTCHours());
+      const mi = pad(dt.getUTCMinutes());
+      const s = pad(dt.getUTCSeconds());
+      return `${y}${mo}${d}T${h}${mi}${s}Z`;
+    }
+    function googleCalendarUrl({title, details, start, end}){
+      const params = new URLSearchParams({
+        action: 'TEMPLATE',
+        text: title,
+        details,
+        dates: `${toGoogleDate(start)}/${toGoogleDate(end)}`
+      });
+      return `https://calendar.google.com/calendar/render?${params.toString()}`;
+    }
+
+    render();
+  </script>
+</body>
+</html>
